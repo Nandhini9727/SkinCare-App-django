@@ -16,12 +16,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from . import views
+from . import views # import views from skincare_main
 from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # '' is the URL pattern of home page
+    # home is the function inside views module that gets called
+    # name="home" is the URL pattern name
     path('', views.home ,name= "home"),
+    # 'store/' is the URL pattern of store page and include will redirect the request to store.urls
     path('store/', include('store.urls')),
-] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+    # 'cart/' is the URL pattern of store page and include will redirect the request to carts.urls
+    path('cart/', include('carts.urls')),
+] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT) # media file configuration

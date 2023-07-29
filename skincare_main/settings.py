@@ -37,9 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'category',
-    'accounts',
-    'store',
+    'category', # adding the category app to settings.py
+    'accounts', # adding the accounts app to settings.py
+    'store', # adding the store app to settings.py
+    'carts', # adding the carts app to settings.py
 ]
 
 MIDDLEWARE = [
@@ -57,7 +58,7 @@ ROOT_URLCONF = 'skincare_main.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': ['templates'], # adding templates directory after creating the templates folder in root directory
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -65,7 +66,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'category.context_processors.menu_links',
+                'category.context_processors.menu_links', # configure category.context_processors.menu_links so that we can use links in any template that is required
+                'carts.context_processors.counter', # condigure carts.context_processors.counter so that we can use cart_counter in any template that is required
             ],
         },
     },
@@ -73,7 +75,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'skincare_main.wsgi.application'
 
-AUTH_USER_MODEL = 'accounts.Account'
+AUTH_USER_MODEL = 'accounts.Account' # to let Django know that custom user model is being used
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
@@ -120,10 +122,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR/'static'
-STATICFILES_DIRS = [
-    'skincare_main/static',
-]
+STATIC_ROOT = BASE_DIR/'static' # STATIC_ROOT is defined for django to find the static folder directory and used for deployment purpose.BASE_DIR refers to the project level directory.
+STATICFILES_DIRS = [ 
+    'skincare_main/static', 
+] # This directory is the list of folders Django will search for addtional static files when we run the server
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -134,4 +136,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # media file configuration
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR/'media'
+MEDIA_ROOT = BASE_DIR/'media' # STATIC_ROOT is defined for django to find the media folder directory and used for deployment purpose.BASE_DIR refers to the project level directory.
