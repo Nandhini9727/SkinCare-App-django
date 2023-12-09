@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-uemzwzn2t&__22+5rzo@2^w8vmtnmg#qnjmikl9v@l$chj)y^g
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['django-skincareAppenv-env.eba-qp7tfns3.us-west-2.elasticbeanstalk.com','localhost','127.0.0.1']
+ALLOWED_HOSTS = ['django-skincareAppenv-env.eba-qp7tfns3.us-west-2.elasticbeanstalk.com','localhost','127.0.0.1','172.31.25.145']
 
 
 # Application definition
