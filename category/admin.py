@@ -3,7 +3,7 @@ from .models import Category
 
 # to create perpopulated fields
 class CategoryAdmin(admin.ModelAdmin):
-    prepopulated_fields = { 'slug':('category_name',)}
+    prepopulated_fields = { 'slug':('category_name',)}#to auto populate the slug field on basis of what we type in category name field
     # to display fields in model objects in front pge of table
     list_display = ('category_name','slug')
 

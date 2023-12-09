@@ -51,7 +51,7 @@ class Account(AbstractBaseUser): # User model class
     username = models.CharField(max_length=50,unique=True)
     phone_number = models.CharField(max_length=50)
 
-    #required
+    # mandatory required fields
     date_joined = models.DateTimeField(auto_now_add=True)
     last_login = models.DateTimeField(auto_now_add=True)
     is_admin = models.BooleanField(default=False)
@@ -63,7 +63,7 @@ class Account(AbstractBaseUser): # User model class
     # USERNAME_FIELD is automatically a required field. other fields that is needed to be required is given in REQUIRED_FIELDS
     REQUIRED_FIELDS = ['username','first_name','last_name'] #A list of the field names that will be prompted for when creating a user via the createsuperuser management command.
 
-    objects = MyAccountManager() # this is inform Account class that we are using MyAccountManager for all these operations
+    objects = MyAccountManager() # this is inform Account class that we are using MyAccountManager for operations such as createuser, create superuser 
 
     def __str__(self):
         return self.email # when we return account object in admin panel template the name of the object is email
