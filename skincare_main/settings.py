@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-uemzwzn2t&__22+5rzo@2^w8vmtnmg#qnjmikl9v@l$chj)y^g
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['django-skincareappenvupdated-env.eba-imubztib.us-west-2.elasticbeanstalk.com','django-skincareAppenvUpdated-env.eba-imubztib.us-west-2.elasticbeanstalk.com','172.31.33.236','*']
+ALLOWED_HOSTS = ['us-west-2.elasticbeanstalk.com','django-skincareappenvupdated-env.eba-imubztib.us-west-2.elasticbeanstalk.com','django-skincareAppenvUpdated-env.eba-imubztib.us-west-2.elasticbeanstalk.com','172.31.33.236','*']
 
 
 # Application definition
